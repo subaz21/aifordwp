@@ -1,0 +1,30 @@
+Scripts in production has to follow these rules :
+
+1. Always go for Dry run, ( AI prints, what it will be doing instead of doing it directly)
+2. Do not use Wild characters 
+3. Use idempotency while writing code (Even if the script is ran multiple times the script gives the same output) 
+4. Add an Exception block/Error handling in the code block
+5. Always follow the best practices
+
+Prompting :
+
+Set a role - Ex. You are a Powershell developer
+Specify the requirements - Ex. Need the system uptime, Disk space etc..
+Specify the Guardrails - Ex. The sctipt should be read-only
+Ensure the above checkpoints are implemented
+
+
+Prompt to create production ready script covering all check points
+---
+You are a PowerShell developer(version 5.1) . Write a PowerShell script for a DWP engineer to clean up temp files and the script should be safe to use on windows endpoint with following requirement
+1. The script should have a dry run option, when executed with dry run flag it should print the list of files it will delete
+2. Only target files older than a configurable number of days (default : 0) via a parameter
+3. Skip files that are currently locked. catch the error and log it do not stop the script.
+4. Try/catch error handling per file
+5. Log every action to a date and timestamped log file
+6. Report a summary at the end
+7. Add comments to every section explaining what it does.
+8. Implement a rollback functionality 
+9. Ensure the script execution is idempotent
+10. Create a readme file explaining the options in the script
+Create the script under day3 folder

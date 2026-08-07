@@ -1,0 +1,46 @@
+## Ai Assisted windows log analysis
+
+You are a DWP analyst working on windows update failure issue. Below are the relevant failure lines from windows update log on windows 11 endpoint. This error occurs repeatedly. Identify the distinct error code present, then give a ranked remediation plan (most likely fix first) with specific check for each. Treat all error codes as given. If you are uncertain about a code say so rather than guessing. Mark anything to verify against Microsoft documentation.
+
+2024-03-15 07:58:01.123 WindowsUpdateClient Info Checking for updates…
+2024-03-15 07:58:44.210 WindowsUpdateClient Info Found 3 applicable updates.
+2024-03-15 07:59:01.001 UpdateOrchestrator Info Downloading KB5034441 (2024-01 Cumulative Update for Windows 11 22H2)
+2024-03-15 07:59:55.887 UpdateOrchestrator Info Download complete. Beginning installation.
+2024-03-15 08:00:12.340 CBS Info Starting component store operations for KB5034441.
+2024-03-15 08:00:58.112 CBS Warning Existing component store has minor inconsistencies. Attempting repair.
+2024-03-15 08:01:02.450 CBS Error Failed to stage component store repair. HRESULT = 0x80073712.
+2024-03-15 08:01:10.780 WindowsUpdateClient Warning Unable to connect to the remote server during validation (0x80072EFE). Retrying…
+2024-03-15 08:01:14.900 WindowsUpdateClient Warning Retry 1 of 3 — connection re-established.
+2024-03-15 08:01:23.001 UpdateOrchestrator Error Failed to install KB5034441 (0x8007000E): Insufficient resources to complete the requested service.
+2024-03-15 08:01:23.110 UpdateOrchestrator Error Extended error: Recovery partition (450MB) is too small to stage update. Required: 862MB. Available: 448MB.
+2024-03-15 08:01:45.330 WindowsUpdateClient Error Installation Failure: Windows failed to install the following update with error 0x8007000E: 2024-01 Cumulative Update for Windows 11 22H2 for x64-based Systems (KB5034441).
+2024-03-15 08:02:11.004 UpdateOrchestrator Info Rolling back partial installation of KB5034441.
+2024-03-15 08:02:12.780 UpdateOrchestrator Info Rollback complete. System state restored.
+2024-03-15 08:02:13.001 UpdateOrchestrator Info Retry scheduled in 60 minutes.
+2024-03-15 08:02:14.450 CBS Info Component store left in pre-repair state. Run DISM /Online /Cleanup-Image /RestoreHealth to resolve 0x80073712.
+2024-03-15 08:03:00.000 WindowsUpdateClient Info Update history logged. Next check: 2024-03-15 09:02:00.
+
+## Ai assisted triage and rca for a incident
+
+You are a DWP analyst, reviewing a incident. Below are windows security event log entries for a 30 minute window during which a user was locked out of their machine. For each event id explain what it records. Then reconstruct the sequence of events in plain English, and give the most likely cause for the lockout with evidence from events. Finally create a detailed RCA document with 5 why analysis and store it under day 3 folder
+
+08:02:14 Security 4625 Audit Failure Account: jsmith
+Failure reason: Unknown username or bad password
+Source: DESKTOP-FB001 Logon type: 2 (Interactive)
+
+08:04:22 Security 4625 Audit Failure Account: jsmith
+Failure reason: Unknown username or bad password
+Source: DESKTOP-FB001 Logon type: 2
+
+08:06:01 Security 4740 Audit Failure Account: jsmith
+Account locked out. Called from DESKTOP-FB001
+
+08:07:45 Security 4625 Audit Failure Account: jsmith
+Failure reason: Account locked out
+Source: DESKTOP-FB001 Logon type: 7 (Unlock)
+
+08:22:10 Security 4722 Audit Success Account: jsmith
+Account enabled. Done by: FINBRIDGE\helpdesk-admin
+
+08:23:44 Security 4624 Audit Success Account: jsmith
+Successful logon. Logon type: 2

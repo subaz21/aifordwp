@@ -1,0 +1,16 @@
+2026-08-05 11:38:11 [INFO] Cleanup mode started. OlderThanDays=0, Cutoff=8/5/2026 11:38:11 AM, DryRun=False
+2026-08-05 11:38:11 [INFO] Scanning path: C:\Users\labuser\AppData\Local\Temp\2
+2026-08-05 11:38:11 [WARN] Skip locked file: C:\Users\labuser\AppData\Local\Temp\2\84904141-483b-4d8d-aa02-0b4cf78acbfa.tmp
+2026-08-05 11:38:11 [WARN] Skip locked file: C:\Users\labuser\AppData\Local\Temp\2\e64ab959-d402-4c4d-8cde-5ca31ef05cf1.tmp
+2026-08-05 11:38:11 [INFO] Moved to quarantine: C:\Users\labuser\AppData\Local\Temp\2\gen_py\3.9\dicts.dat -> C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Quarantine\a658b78b-404a-46c0-b2c8-844e397c921f_C__Users_labuser_AppData_Local_Temp_2_gen_py_3.9_dicts.dat
+2026-08-05 11:38:11 [INFO] Moved to quarantine: C:\Users\labuser\AppData\Local\Temp\2\gen_py\3.9\__init__.py -> C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Quarantine\a658b78b-404a-46c0-b2c8-844e397c921f_C__Users_labuser_AppData_Local_Temp_2_gen_py_3.9___init__.py
+2026-08-05 11:38:11 [INFO] Manifest saved: C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Manifests\manifest-a658b78b-404a-46c0-b2c8-844e397c921f.csv
+2026-08-05 11:38:11 [INFO] Summary:
+2026-08-05 11:38:11 [INFO] Candidates: 4
+2026-08-05 11:38:11 [INFO] Processed: 4
+2026-08-05 11:38:11 [INFO] Moved to quarantine: 2
+2026-08-05 11:38:11 [INFO] Skipped locked: 2
+2026-08-05 11:38:11 [INFO] Skipped missing: 0
+2026-08-05 11:38:11 [INFO] Errors: 0
+2026-08-05 11:38:11 [INFO] RunId: a658b78b-404a-46c0-b2c8-844e397c921f
+2026-08-05 11:38:11 [INFO] Log file: C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Logs\cleanup-20260805-113811.log

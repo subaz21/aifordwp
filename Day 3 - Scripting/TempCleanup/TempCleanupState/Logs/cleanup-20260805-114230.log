@@ -1,0 +1,20 @@
+2026-08-05 11:42:30 [INFO] Cleanup mode started. OlderThanDays=0, Cutoff=8/5/2026 11:42:30 AM, DryRun=False
+2026-08-05 11:42:30 [INFO] Scanning path: C:\Users\labuser\AppData\Local\Temp\2
+2026-08-05 11:42:31 [WARN] Skip locked file: C:\Users\labuser\AppData\Local\Temp\2\84904141-483b-4d8d-aa02-0b4cf78acbfa.tmp
+2026-08-05 11:42:31 [WARN] Skip locked file: C:\Users\labuser\AppData\Local\Temp\2\e64ab959-d402-4c4d-8cde-5ca31ef05cf1.tmp
+2026-08-05 11:42:31 [INFO] No files moved; no manifest created.
+2026-08-05 11:42:31 [INFO] Summary:
+2026-08-05 11:42:31 [INFO] Mode: Cleanup
+2026-08-05 11:42:31 [INFO] Scanned paths: 1
+2026-08-05 11:42:31 [INFO] Age filter (days): 0
+2026-08-05 11:42:31 [INFO] Cutoff timestamp: 8/5/2026 11:42:30 AM
+2026-08-05 11:42:31 [INFO] Candidates: 2
+2026-08-05 11:42:31 [INFO] Candidate size: 381.89 KB (391060 bytes)
+2026-08-05 11:42:31 [INFO] Processed: 2
+2026-08-05 11:42:31 [INFO] Moved to quarantine: 0
+2026-08-05 11:42:31 [INFO] Moved size: 0 B (0 bytes)
+2026-08-05 11:42:31 [INFO] Skipped locked: 2
+2026-08-05 11:42:31 [INFO] Skipped missing: 0
+2026-08-05 11:42:31 [INFO] Errors: 0
+2026-08-05 11:42:31 [INFO] RunId: 94887842-7ab0-4e6f-9cff-eace5308fe66
+2026-08-05 11:42:31 [INFO] Log file: C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Logs\cleanup-20260805-114230.log

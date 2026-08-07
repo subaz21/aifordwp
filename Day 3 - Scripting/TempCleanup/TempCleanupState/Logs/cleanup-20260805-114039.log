@@ -1,0 +1,16 @@
+2026-08-05 11:40:39 [INFO] Cleanup mode started. OlderThanDays=1, Cutoff=8/4/2026 11:40:39 AM, DryRun=True
+2026-08-05 11:40:39 [INFO] Scanning path: C:\Users\labuser\AppData\Local\Temp\2
+2026-08-05 11:40:39 [INFO] Dry run selected. Candidate file count: 0
+2026-08-05 11:40:39 [INFO] Summary:
+2026-08-05 11:40:39 [INFO] Mode: DryRun
+2026-08-05 11:40:39 [INFO] Scanned paths: 1
+2026-08-05 11:40:39 [INFO] Age filter (days): 1
+2026-08-05 11:40:39 [INFO] Cutoff timestamp: 8/4/2026 11:40:39 AM
+2026-08-05 11:40:39 [INFO] Candidates: 0
+2026-08-05 11:40:39 [INFO] Candidate size: 0 B (0 bytes)
+2026-08-05 11:40:39 [INFO] Processed: 0
+2026-08-05 11:40:39 [INFO] Moved to quarantine: 0
+2026-08-05 11:40:39 [INFO] Skipped locked: 0
+2026-08-05 11:40:39 [INFO] Skipped missing: 0
+2026-08-05 11:40:39 [INFO] Errors: 0
+2026-08-05 11:40:39 [INFO] Log file: C:\Users\labuser\Documents\Training\Day 3 - Scripting\TempCleanupState\Logs\cleanup-20260805-114039.log
