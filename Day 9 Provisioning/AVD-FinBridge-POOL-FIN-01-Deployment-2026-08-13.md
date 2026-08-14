@@ -169,6 +169,38 @@ Since directory cleanup was not permitted, the conflict was resolved from the Az
 
 ---
 
+## Post-Deployment Issue — Session Host "Can't Connect" (2026-08-14)
+
+**Status:** OPEN — under investigation, root cause not yet confirmed
+
+### Symptom
+One day after the deployment above was confirmed `Available`, the host pool Overview blade in the Azure portal showed:
+
+| Tile | Value |
+|---|---|
+| Total machines | 1 |
+| Can connect | 0 |
+| Can't connect | 1 |
+| Active / Disconnected / Pending sessions | 0 / 0 / 0 |
+
+The Overview tile alone does not surface an error code or reason — only the connect/can't-connect count.
+
+### Troubleshooting Guidance Issued
+Since the portal Overview tile gives no root cause detail, the following drill-down path was provided to identify the actual failure before attempting any fix:
+
+1. **Manage > Session Hosts** blade — open the host row for `avd-fb-77-9132` (VM `vm-fin-01`) and read the **Health check** detail (Domain Trust, Monitoring Agent, URL check, Session Host Configuration, etc.), or run the **Diagnose and solve problems** troubleshooter for "session host cannot be connected to."
+2. **VM power state** — confirm `vm-fin-01` shows `Running` and not `Stopped`/`Deallocated`.
+3. **Agent/identity check from inside the VM** (given this environment's prior Entra hostname-collision root cause, checked first as the most likely repeat cause):
+   - `Get-Service RdAgent, RDAgentBootLoader` — confirm both `Running`.
+   - `dsregcmd /status` — confirm `AzureAdJoined : YES`; if `NO`, check the `Microsoft-Windows-User Device Registration/Admin` event log for the same `Request_BadRequest` duplicate-hostname error seen during initial deployment, and remediate the same way (unique hostname rename + rejoin + fresh registration token) if it recurs.
+4. **Network path check** — `Test-NetConnection rdbroker.wvd.microsoft.com -Port 443` and `Test-NetConnection rddiagnostics.wvd.microsoft.com -Port 443` from the VM, if identity/agent checks pass.
+5. **Verification** — re-check the Session Hosts blade / `az desktopvirtualization sessionhost list` for status `Available` and confirm the Overview tile returns to "Can't connect: 0."
+
+### Next Step
+Awaiting the actual Health check detail / `dsregcmd /status` output from the above steps to confirm the specific cause before remediation is finalized. This section will be updated once the root cause is confirmed.
+
+---
+
 ## Follow-Ups / Recommendations
 
 1. **Entra device hygiene:** Request Cloud Device Administrator (or equivalent) rights be granted to the DWP engineering role so stale/duplicate device objects can be cleaned up directly, instead of working around them with hostname renames.
